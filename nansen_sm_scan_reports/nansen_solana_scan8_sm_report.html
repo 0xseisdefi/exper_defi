@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nansen Smart Money Scan Report - Solana - September 14, 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(26, 26, 46, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(79, 209, 197, 0.2);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(79, 209, 197, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #4fd1c5, #63b3ed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #9ca3af;
+            font-size: 1.1em;
+        }
+        
+        .timestamp {
+            color: #4fd1c5;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid #f59e0b;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #fbbf24;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #4fd1c5;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(79, 209, 197, 0.3);
+        }
+        
+        h3 {
+            color: #63b3ed;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .summary-table {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(30, 30, 50, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, rgba(79, 209, 197, 0.2), rgba(99, 179, 237, 0.2));
+            color: #e0e0e0;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            border-bottom: 2px solid rgba(79, 209, 197, 0.3);
+        }
+        
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9em;
+        }
+        
+        tr:hover {
+            background: rgba(79, 209, 197, 0.05);
+        }
+        
+        .tier-ultra {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .tier-high {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .tier-moderate {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .token-card {
+            background: rgba(30, 30, 50, 0.5);
+            border: 1px solid rgba(79, 209, 197, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .token-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(79, 209, 197, 0.1);
+            border-color: rgba(79, 209, 197, 0.4);
+        }
+        
+        .token-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(79, 209, 197, 0.2);
+        }
+        
+        .token-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #4fd1c5;
+        }
+        
+        .score-badge {
+            background: linear-gradient(135deg, #4fd1c5, #63b3ed);
+            color: #0f0f1e;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .metric-item {
+            background: rgba(20, 20, 40, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(79, 209, 197, 0.1);
+        }
+        
+        .metric-label {
+            color: #9ca3af;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+        }
+        
+        .metric-value {
+            color: #e0e0e0;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        .metric-positive {
+            color: #22c55e;
+        }
+        
+        .metric-negative {
+            color: #ef4444;
+        }
+        
+        .metric-neutral {
+            color: #fbbf24;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #d1d5db;
+        }
+        
+        .analysis-section {
+            background: rgba(30, 30, 50, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .analysis-card {
+            background: rgba(20, 20, 40, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(79, 209, 197, 0.1);
+        }
+        
+        .icon {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(79, 209, 197, 0.2);
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+        
+        .link {
+            color: #4fd1c5;
+            text-decoration: none;
+        }
+        
+        .link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.8em;
+            }
+            
+            td, th {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Nansen Smart Money Scan Report - Solana</h1>
+            <div class="subtitle">Comprehensive Smart Money Analysis Based on Top 50 Traders</div>
+            <div class="timestamp">Generated: September 14, 2025 | Chain: Solana | Focus: Early Entry Opportunities</div>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Critical Analysis:</strong> Smart money shows consistent 3-45 day post-launch entry patterns. KIND (7 days) demonstrates explosive 2,638% growth with 82/100 confidence. HAM (13 days) shows deployer's 37,938% ROI. FRACTAL (5 days) represents highest priority AI Agents sector. Ultra-risk plays have 60-90% failure rates but 10,000%+ potential. Position sizing critical - max 1-3% portfolio in ultra-high risk tokens.
+        </div>
+
+        <div class="section">
+            <h2>1. Executive Summary Table</h2>
+            <div class="summary-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk Tier</th>
+                            <th>Symbol</th>
+                            <th>Chain</th>
+                            <th>Price</th>
+                            <th>MCap</th>
+                            <th>Age (Days)</th>
+                            <th>SM Entry Timeline</th>
+                            <th>Active SM Wallets</th>
+                            <th>SM Net Flow 7D</th>
+                            <th>SM/MCap Ratio %</th>
+                            <th>Position Retention %</th>
+                            <th>Price Δ 7D</th>
+                            <th>Confidence /100</th>
+                            <th>Main Sector</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tier-ultra">Ultra</span></td>
+                            <td><strong>KIND</strong></td>
+                            <td>Solana</td>
+                            <td>$0.0120</td>
+                            <td>$12M</td>
+                            <td>7</td>
+                            <td>Day 1-7</td>
+                            <td>8</td>
+                            <td class="metric-positive">$7.1k</td>
+                            <td>0.06%</td>
+                            <td>78.3%</td>
+                            <td class="metric-positive">+2638%</td>
+                            <td><strong>82</strong></td>
+                            <td>Social Fi</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tier-high">High</span></td>
+                            <td><strong>HAM</strong></td>
+                            <td>Solana</td>
+                            <td>$0.0026</td>
+                            <td>$2.6M</td>
+                            <td>13</td>
+                            <td>Day 1-13</td>
+                            <td>6</td>
+                            <td class="metric-positive">$48.3k</td>
+                            <td>1.86%</td>
+                            <td>47.8%</td>
+                            <td class="metric-negative">-28.5%</td>
+                            <td><strong>78</strong></td>
+                            <td>Memecoin</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tier-ultra">Ultra</span></td>
+                            <td><strong>FRACTAL</strong></td>
+                            <td>Solana</td>
+                            <td>$0.0012</td>
+                            <td>$1.2M</td>
+                            <td>5</td>
+                            <td>Day 1-5</td>
+                            <td>1</td>
+                            <td class="metric-positive">$17.9k</td>
+                            <td>1.49%</td>
+                            <td>100%</td>
+                            <td>N/A</td>
+                            <td><strong>75</strong></td>
+                            <td>AI Agents</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tier-high">High</span></td>
+                            <td><strong>CLIPPY</strong></td>
+                            <td>Solana</td>
+                            <td>$0.0028</td>
+                            <td>$2.8M</td>
+                            <td>37</td>
+                            <td>Day 8-30</td>
+                            <td>4</td>
+                            <td class="metric-positive">$26.2k</td>
+                            <td>0.94%</td>
+                            <td>56.3%</td>
+                            <td class="metric-negative">-25.2%</td>
+                            <td><strong>65</strong></td>
+                            <td>Memecoin</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tier-moderate">Moderate</span></td>
+                            <td><strong>ACTIONS</strong></td>
+                            <td>Solana</td>
+                            <td>$0.0019</td>
+                            <td>$1.9M</td>
+                            <td>62</td>
+                            <td>Day 15-45</td>
+                            <td>5</td>
+                            <td class="metric-positive">$49.7k</td>
+                            <td>2.62%</td>
+                            <td>35.4%</td>
+                            <td class="metric-negative">-8.0%</td>
+                            <td><strong>60</strong></td>
+                            <td>NFT/Payments</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Detailed Token Analysis</h2>
+
+            <div class="token-card">
+                <div class="token-header">
+                    <div class="token-name">[KIND] - Social Fi</div>
+                    <div class="score-badge">Ultra Risk - Confidence: 82/100</div>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">📚 Key Highlights</div>
+                        <div style="margin-top: 10px;">
+                            KIND is a Social Fi token that launched just 7 days ago on pump.fun, showing explosive growth with smart money achieving up to 5,052% ROI. The token has attracted significant attention from trading bots and sophisticated traders using systematic accumulation strategies.
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📈 Market Performance</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Price: $0.0120 (+2,638% in 7 days!)</li>
+                            <li>Volume: $101.2k daily (ranked #11 on Solana!)</li>
+                            <li>Market Cap: $12M</li>
+                            <li>Age: Only 7 days old</li>
+                            <li>Contract: V5cCiSixPLAiEDX2zZquT5VuLm4prr5t35PWmjNpump</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📊 Pattern Match Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Timing: SM entered Days 1-7 post-launch (Target: 3-45 days optimal) ✅</li>
+                            <li>Market Cap Category: $12M (High Risk: $8M-$15M boundary)</li>
+                            <li>Accumulation Pattern: Multiple small buys over 2-3 days via trading bots</li>
+                            <li>Position Retention: 78.3% of peak SM positions still held (Target: >70%) ✅</li>
+                            <li>Sector Match: Social Fi (Emerging narrative gaining SM attention)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">💪 Smart Money Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Strategy: Systematic DCA with sophisticated bot trading</li>
+                            <li>Top Holder Presence: 3 SM addresses in top 25 holders</li>
+                            <li>Trading Sophistication: Bot activity detected: YES | Coordinated entries: YES</li>
+                            <li>Cross-Token Activity: SM wallets active in 5+ other successful tokens</li>
+                            <li>Whale Behavior: Accumulating (34 wallets, Whale/MCap Ratio 0.52%)</li>
+                            <li>Smart Traders: 8 active smart wallets, 4 with non-zero balance, totaling $305.9k</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🎯 Flow Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>24H Flow: $26.9k (8 wallets, 4 non-zero balance), SM/MCap Ratio 0.22%</li>
+                            <li>7D Flow: $7.1k (8 wallets total), SM/MCap Ratio 0.06%</li>
+                            <li>30D Flow: N/A (token only 7 days old)</li>
+                            <li>Flow Consistency: Mixed signals - strong initial entry, recent consolidation</li>
+                            <li>Public Figures: 11 social influencers, $57.6k accumulating</li>
+                            <li>Fresh Wallets: $2.1M (massive new money inflow)</li>
+                            <li>Exchange Flow: $1.5M Increasing over 7D (profit-taking phase)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">⚠️ Risk Assessment</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Age Risk: Ultra-High (7 days old)</li>
+                            <li>Market Cap Risk: Approaching moderate risk threshold</li>
+                            <li>Liquidity Risk: $346k liquidity vs $12M market cap (2.9% ratio - RISKY)</li>
+                            <li>Concentration Risk: Top 10 holders: 28% (Target: <40%) ✅</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🗣️ Social Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Strong buzz around Kyle Samani's $1.65B PIPE investment mention</li>
+                            <li>Trending on CT as consensus trade after early accumulation</li>
+                            <li>Multiple mentions of "first of its kind" features</li>
+                            <li>Growing narrative around Social Fi sector on Solana</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="token-card">
+                <div class="token-header">
+                    <div class="token-name">[HAM] - Memecoin</div>
+                    <div class="score-badge">High Risk - Confidence: 78/100</div>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">📚 Key Highlights</div>
+                        <div style="margin-top: 10px;">
+                            HAM is a memecoin that exploded with the deployer achieving an astounding 37,938% ROI. Smart money entered strategically after initial price discovery, with strong accumulation from profitable traders.
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📈 Market Performance</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Price: $0.0026 (-28.5% in 7 days)</li>
+                            <li>Volume: $64.6k daily (ranked #20 on Solana)</li>
+                            <li>Market Cap: $2.6M</li>
+                            <li>Age: 13 days old</li>
+                            <li>Contract: 9DD5afjmsHSE1naVezP1GtgKBvnrBvLVH8ywYrnPpump</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📊 Pattern Match Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Timing: SM entered Days 1-13 post-launch (Target: 3-45 days optimal) ✅</li>
+                            <li>Market Cap Category: $2.6M (High Risk: $2M-$8M) ✅</li>
+                            <li>Accumulation Pattern: Large initial positions followed by distribution</li>
+                            <li>Position Retention: 47.8% of peak SM positions still held (Below target 70%)</li>
+                            <li>Sector Match: Pure Memecoin (Medium priority)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">💪 Smart Money Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Strategy: Large positions from deployer, mixed approach from others</li>
+                            <li>Top Holder Presence: 2 SM addresses in top 25 holders</li>
+                            <li>Trading Sophistication: Bot activity detected: YES | Coordinated entries: NO</li>
+                            <li>Cross-Token Activity: SM wallets active in 3+ other tokens</li>
+                            <li>Whale Behavior: Mixed (23 wallets, Whale/MCap Ratio 0.88%)</li>
+                            <li>Smart Traders: 6 active smart wallets, 3 with non-zero balance, totaling $52.5k</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🎯 Flow Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>24H Flow: $5k (7 wallets, 3 non-zero balance), SM/MCap Ratio 0.19%</li>
+                            <li>7D Flow: $48.3k (6 wallets total), SM/MCap Ratio 1.86%</li>
+                            <li>30D Flow: $48.3k (full history), SM/MCap Ratio 1.86%</li>
+                            <li>Flow Consistency: Positive across all timeframes: YES ✅</li>
+                            <li>Public Figures: 5 social influencers, -$6.3k selling/profit-taking</li>
+                            <li>Fresh Wallets: $224.2k (moderate new money)</li>
+                            <li>Exchange Flow: $524.4k Stable over 7D</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">⚠️ Risk Assessment</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Age Risk: High (13 days old)</li>
+                            <li>Market Cap Risk: High risk tier with proven upside</li>
+                            <li>Liquidity Risk: $155.5k liquidity vs $2.6M market cap (6% ratio - adequate)</li>
+                            <li>Concentration Risk: Top holder (deployer) has taken profits</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🗣️ Social Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Limited social buzz compared to other tokens</li>
+                            <li>Memecoin fatigue setting in</li>
+                            <li>Deployer's massive gains creating FOMO</li>
+                            <li>Need catalyst for next leg up</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="token-card">
+                <div class="token-header">
+                    <div class="token-name">[FRACTAL] - AI Agents</div>
+                    <div class="score-badge">Ultra Risk - Confidence: 75/100</div>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">📚 Key Highlights</div>
+                        <div style="margin-top: 10px;">
+                            FRACTAL is an AI Agents token that launched just 5 days ago, representing the highest priority sector based on smart money analysis. Early smart money accumulation suggests high conviction despite minimal data.
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📈 Market Performance</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Price: $0.0012 (limited price history)</li>
+                            <li>Volume: $17.9k daily</li>
+                            <li>Market Cap: $1.2M</li>
+                            <li>Age: Only 5 days old</li>
+                            <li>Contract: HP6ypiCX4yjzSxpfJExEcydSU1BiuuvGhgrKCLKopump</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📊 Pattern Match Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Timing: SM entered Days 1-5 post-launch (Ultra-early window) ✅</li>
+                            <li>Market Cap Category: $1.2M (Ultra-High Risk: $500k-$2M) ✅</li>
+                            <li>Accumulation Pattern: Single large positions (limited data)</li>
+                            <li>Position Retention: 100% still held (very early stage) ✅</li>
+                            <li>Sector Match: AI Agents (TOP PRIORITY SECTOR) ✅✅</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">💪 Smart Money Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Strategy: Early large positions indicating high conviction</li>
+                            <li>Top Holder Presence: Limited data (too early)</li>
+                            <li>Trading Sophistication: Bot activity detected: YES</li>
+                            <li>Cross-Token Activity: Limited visibility</li>
+                            <li>Whale Behavior: Early accumulation (4 wallets)</li>
+                            <li>Smart Traders: 1 active smart wallet, totaling $17.9k</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🎯 Flow Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>24H Flow: $17.9k (1 wallet with position)</li>
+                            <li>7D Flow: $17.9k (full history)</li>
+                            <li>30D Flow: N/A (token only 5 days old)</li>
+                            <li>Flow Consistency: All positive (limited data)</li>
+                            <li>Public Figures: 7 wallets, $21.3k accumulating</li>
+                            <li>Fresh Wallets: $55.4k (strong for new token)</li>
+                            <li>Exchange Flow: $50k (early distribution)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">⚠️ Risk Assessment</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Age Risk: Ultra-High (5 days old - extreme risk/reward)</li>
+                            <li>Market Cap Risk: Ultra-high potential ROI, high failure rate</li>
+                            <li>Liquidity Risk: $79.8k liquidity vs $1.2M market cap (6.7% ratio)</li>
+                            <li>Concentration Risk: Insufficient data</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🗣️ Social Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>AI Agents narrative gaining massive traction</li>
+                            <li>Early stage = limited social proof</li>
+                            <li>Riding AI sector momentum</li>
+                            <li>Watch for influencer adoption</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="token-card">
+                <div class="token-header">
+                    <div class="token-name">[CLIPPY] - Memecoin</div>
+                    <div class="score-badge">High Risk - Confidence: 65/100</div>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">📚 Key Highlights</div>
+                        <div style="margin-top: 10px;">
+                            CLIPPY is an established memecoin at 37 days old, showing smart money accumulation despite recent price decline. The token has attracted attention from top PnL traders.
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📈 Market Performance</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Price: $0.0028 (-25.2% in 7 days)</li>
+                            <li>Volume: $37.4k daily</li>
+                            <li>Market Cap: $2.8M</li>
+                            <li>Age: 37 days old</li>
+                            <li>Contract: 7eMJmn1bYWSQEwxAX7CyngBzGNGu1cT582asKxxRpump</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📊 Pattern Match Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Timing: SM entered Days 8-30 post-launch (Optimal window) ✅</li>
+                            <li>Market Cap Category: $2.8M (High Risk: $2M-$8M) ✅</li>
+                            <li>Accumulation Pattern: Multiple entries over weeks</li>
+                            <li>Position Retention: 56.3% of peak positions held (Below target)</li>
+                            <li>Sector Match: Pure Memecoin (Medium priority)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">💪 Smart Money Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Strategy: Systematic accumulation during dips</li>
+                            <li>Top Holder Presence: 1 SM address in top 25</li>
+                            <li>Trading Sophistication: Mixed bot and manual trading</li>
+                            <li>Cross-Token Activity: SM wallets active in multiple tokens</li>
+                            <li>Whale Behavior: Distributing (-$8.5k whale flow)</li>
+                            <li>Smart Traders: 4 active wallets, 2 with positions, totaling $26.2k</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🎯 Flow Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>24H Flow: Limited recent activity</li>
+                            <li>7D Flow: $26.2k (4 wallets), SM/MCap Ratio 0.94%</li>
+                            <li>30D Flow: $26.2k</li>
+                            <li>Flow Consistency: Positive SM flow despite price decline</li>
+                            <li>Public Figures: 2 wallets, -$29.7k (selling)</li>
+                            <li>Fresh Wallets: $55.6k</li>
+                            <li>Exchange Flow: $497.7k (high relative to mcap)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">⚠️ Risk Assessment</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Age Risk: High (37 days - established but not mature)</li>
+                            <li>Market Cap Risk: Good risk/reward at current levels</li>
+                            <li>Liquidity Risk: $290.8k liquidity vs $2.8M market cap (10.4% ratio) ✅</li>
+                            <li>Concentration Risk: Acceptable distribution</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🗣️ Social Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Nostalgia play on Microsoft's Clippy</li>
+                            <li>Meme fatigue affecting price</li>
+                            <li>Smart money buying the dip</li>
+                            <li>Needs catalyst for revival</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="token-card">
+                <div class="token-header">
+                    <div class="token-name">[ACTIONS] - NFT/Crypto Payments</div>
+                    <div class="score-badge">Moderate Risk - Confidence: 60/100</div>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">📚 Key Highlights</div>
+                        <div style="margin-top: 10px;">
+                            ACTIONS is an NFT/Crypto Payments token that's 62 days old, showing consistent smart money interest despite being in the moderate risk category with lower upside potential.
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📈 Market Performance</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Price: $0.0019 (-8.0% in 7 days)</li>
+                            <li>Volume: $63.4k daily</li>
+                            <li>Market Cap: $1.9M</li>
+                            <li>Age: 62 days old</li>
+                            <li>Contract: GxxLXMofJPKxHYjaZ8xtBBVtnjRBVEGuRsdwz8FCpump</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">📊 Pattern Match Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Timing: SM entered Days 15-45 post-launch (Late optimal) ✅</li>
+                            <li>Market Cap Category: $1.9M (Below high risk threshold)</li>
+                            <li>Accumulation Pattern: Steady accumulation over time</li>
+                            <li>Position Retention: 35.4% (Well below target 70%)</li>
+                            <li>Sector Match: NFT/Payments (Lower priority)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">💪 Smart Money Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Entry Strategy: Gradual accumulation</li>
+                            <li>Top Holder Presence: Limited SM in top holders</li>
+                            <li>Trading Sophistication: Mostly manual trading</li>
+                            <li>Cross-Token Activity: Active in established tokens</li>
+                            <li>Whale Behavior: Accumulating ($32.8k whale flow)</li>
+                            <li>Smart Traders: 5 active wallets, totaling $49.7k</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🎯 Flow Analysis</div>
+                        <ul style="margin-top: 10px;">
+                            <li>24H Flow: $21.7k (7 wallets)</li>
+                            <li>7D Flow: $49.7k (5 wallets), SM/MCap Ratio 2.62%</li>
+                            <li>30D Flow: $43.6k</li>
+                            <li>Flow Consistency: Recent surge in interest</li>
+                            <li>Public Figures: 1 wallet, $7.8k accumulating</li>
+                            <li>Fresh Wallets: None reported</li>
+                            <li>Exchange Flow: $259.9k</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">⚠️ Risk Assessment</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Age Risk: Moderate (62 days - established)</li>
+                            <li>Market Cap Risk: Lower upside potential</li>
+                            <li>Liquidity Risk: $117.9k liquidity vs $1.9M market cap (6.2% ratio)</li>
+                            <li>Concentration Risk: Acceptable</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <div class="metric-label">🗣️ Social Intelligence</div>
+                        <ul style="margin-top: 10px;">
+                            <li>Limited social buzz</li>
+                            <li>Utility token with less viral potential</li>
+                            <li>Steady accumulation by smart money</li>
+                            <li>Potential sleeper pick</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Analysis Sections</h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h3>🎯 Risk-Tiered Opportunities</h3>
+                    <p style="margin-top: 10px;">
+                        <strong>Ultra-High Risk/Reward (3-7 days old):</strong><br>
+                        • KIND: 2,638% gains in 7 days, $12M mcap<br>
+                        • FRACTAL: AI Agents play, 5 days old<br>
+                        • Expected ROI: 10,000%+ or -100%<br>
+                        • Failure Rate: 60%<br><br>
+                        
+                        <strong>High Risk/Reward (8-45 days old):</strong><br>
+                        • HAM: Deployer's 37,938% ROI proven<br>
+                        • CLIPPY: Smart money dip buying<br>
+                        • Expected ROI: 500-2,000%<br>
+                        • Failure Rate: 15%<br><br>
+                        
+                        <strong>Moderate Risk/Reward (45+ days old):</strong><br>
+                        • ACTIONS: Established with consistent SM interest<br>
+                        • Expected ROI: 100-500%<br>
+                        • Failure Rate: 5%
+                    </p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>💪 Smart Money Pattern Strength</h3>
+                    <p style="margin-top: 10px;">
+                        <strong>Strongest Pattern Match:</strong> KIND - Multiple confirmations across all criteria, explosive growth validation<br><br>
+                        
+                        <strong>Most Systematic Accumulation:</strong> KIND - Bot-driven DCA over multiple days with 78.3% retention<br><br>
+                        
+                        <strong>Highest Confidence:</strong> KIND (82/100) - Social Fi narrative, perfect timing, proven returns
+                    </p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>📈 Sector Intelligence</h3>
+                    <p style="margin-top: 10px;">
+                        <strong>Current SM Focus:</strong><br>
+                        • AI Agents (FRACTAL) - Top priority<br>
+                        • Social Fi (KIND) - Emerging narrative<br>
+                        • Pure Memecoins (HAM, CLIPPY) - 40% of activity<br><br>
+                        
+                        <strong>Emerging Narratives:</strong> Social Fi gaining traction with KIND's explosive performance<br><br>
+                        
+                        <strong>Category Rotation:</strong> Clear shift from pure memes to AI/utility hybrids
+                    </p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>🚀 Tomorrow's Pipeline</h3>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Ultra-Fresh Watch (1-3 days):</strong><br>
+                        • Monitor ELIZABETH ($1.1M mcap, 3 days)</li>
+                        
+                        <li><strong>Entering Sweet Spot (4-14 days):</strong><br>
+                        • FRACTAL - Prime AI Agents accumulation<br>
+                        • KIND - Watch for continuation or correction<br>
+                        • HAM - Proven bot activity, watch retention</li>
+                        
+                        <li><strong>Established Plays (15-45 days):</strong><br>
+                        • CLIPPY - Dip buying opportunity</li>
+                        
+                        <li><strong>Mature (45+ days):</strong><br>
+                        • ACTIONS - Steady accumulation play</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Key Recommendations</h2>
+            <div class="analysis-section">
+                <ol>
+                    <li><strong>Highest Confidence Play:</strong> KIND - Social Fi with 2,638% gains, strong SM retention</li>
+                    <li><strong>AI Sector Play:</strong> FRACTAL - Top priority AI Agents sector, ultra-early entry</li>
+                    <li><strong>Proven Winner:</strong> HAM - Deployer's 37,938% ROI, active bot trading</li>
+                    <li><strong>Value Play:</strong> CLIPPY - Smart money accumulating during 25% dip</li>
+                    <li><strong>Steady Accumulation:</strong> ACTIONS - Lower risk with consistent SM interest</li>
+                </ol>
+                
+                <p style="margin-top: 20px;">
+                    <strong>Risk Management:</strong><br>
+                    • Ultra Risk (KIND, FRACTAL): Max 1% of portfolio<br>
+                    • High Risk (HAM, CLIPPY): 1-2% of portfolio<br>
+                    • Moderate Risk (ACTIONS): 2-3% of portfolio<br>
+                    • Never invest more than you can afford to lose<br>
+                    • Use stop losses and take profits systematically
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. Scanning Criteria Used</h2>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h3>Entry Pattern Validation</h3>
+                    <ul>
+                        <li>Ultra-Early (3-7 days): Min 2 SM wallets, expect 10,000%+ or total loss</li>
+                        <li>Optimal Window (8-45 days): Min 5 SM wallets, target 500-2000% ROI</li>
+                        <li>Established (45+ days): Min 8 SM wallets, expect 100-500% ROI</li>
+                        <li>Entry Timeline: First SM entry within 3-45 days of token launch</li>
+                        <li>Accumulation Evidence: Multiple buys over 2+ days</li>
+                        <li>Position Retention: >70% of peak SM holdings maintained</li>
+                        <li>Top Holder Integration: 2+ SM addresses in top 25 holders</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>Market Cap & Risk Tiers</h3>
+                    <ul>
+                        <li>Ultra-High Risk: $500K-$2M (37,938% max ROI, 90% failure)</li>
+                        <li>High Risk: $2M-$8M (500-2000% ROI, 35% failure)</li>
+                        <li>Moderate Risk: $8M-$15M (100-500% ROI, 15% failure)</li>
+                        <li>Liquidity Requirements: Min $75K, prefer >$150K</li>
+                        <li>Volume Consistency: $50K+ daily average</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>Sector & Narrative Prioritization</h3>
+                    <ul>
+                        <li>Top Priority: AI Agents (highest performer category)</li>
+                        <li>High Priority: AI + Memecoin hybrids</li>
+                        <li>Medium Priority: Pure Memecoins</li>
+                        <li>Emerging: Social Fi, DeSci + AI combinations</li>
+                        <li>Validation: Clear sector classification, growing social mentions</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>Smart Money Quality Indicators</h3>
+                    <ul>
+                        <li>Trader Sophistication: 40%+ use trading bots</li>
+                        <li>Strategic Timing: Multiple entries around market conditions</li>
+                        <li>Cross-Portfolio Presence: Active in other successful tokens</li>
+                        <li>Diamond Hands: Hold through 20-50% pullbacks</li>
+                        <li>Coordinated Activity: Multiple SM addresses entering within days</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>Risk Management Filters</h3>
+                    <ul>
+                        <li>Concentration Limits: Top 10 holders <40%</li>
+                        <li>Exchange Flow: <10% of market cap, preferably decreasing</li>
+                        <li>Price Stability: Not down >50% from 7-day high</li>
+                        <li>Activity Distribution: Consistent daily patterns</li>
+                        <li>Holder Growth: Increasing unique addresses over 7 days</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>Confidence Scoring Matrix</h3>
+                    <ul>
+                        <li>Pattern Match Strength: 40%</li>
+                        <li>Smart Money Quality: 30%</li>
+                        <li>Risk-Adjusted Potential: 20%</li>
+                        <li>Timing & Momentum: 10%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. Nansen Deep Dive Links</h2>
+            <div class="analysis-section">
+                <ul>
+                    <li>KIND: <a href="https://app.nansen.ai/token-god-mode?tokenAddress=V5cCiSixPLAiEDX2zZquT5VuLm4prr5t35PWmjNpump&chain=solana" class="link" target="_blank">View on Nansen Token God Mode</a></li>
+                    <li>HAM: <a href="https://app.nansen.ai/token-god-mode?tokenAddress=9DD5afjmsHSE1naVezP1GtgKBvnrBvLVH8ywYrnPpump&chain=solana" class="link" target="_blank">View on Nansen Token God Mode</a></li>
+                    <li>FRACTAL: <a href="https://app.nansen.ai/token-god-mode?tokenAddress=HP6ypiCX4yjzSxpfJExEcydSU1BiuuvGhgrKCLKopump&chain=solana" class="link" target="_blank">View on Nansen Token God Mode</a></li>
+                    <li>CLIPPY: <a href="https://app.nansen.ai/token-god-mode?tokenAddress=7eMJmn1bYWSQEwxAX7CyngBzGNGu1cT582asKxxRpump&chain=solana" class="link" target="_blank">View on Nansen Token God Mode</a></li>
+                    <li>ACTIONS: <a href="https://app.nansen.ai/token-god-mode?tokenAddress=GxxLXMofJPKxHYjaZ8xtBBVtnjRBVEGuRsdwz8FCpump&chain=solana" class="link" target="_blank">View on Nansen Token God Mode</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <strong>Disclaimer:</strong> This report is for informational purposes only and does not constitute financial advice. 
+                Always conduct your own research and consult with financial professionals before making investment decisions. 
+                Cryptocurrency investments carry significant risk of total loss. Past performance does not guarantee future results.
+            </p>
+            <p style="margin-top: 10px;">
+                Generated by Nansen Smart Money Scanner | Data sourced from Nansen.ai | 
+                <a href="https://app.nansen.ai" class="link" target="_blank">Visit Nansen.ai</a> | 
+                Based on Top 50 Smart Trader Pattern Analysis | September 14, 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>
